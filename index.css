@@ -147,7 +147,7 @@ a[title="Connect with me on Instagram"]:hover {
     height: auto; /* Maintain the aspect ratio */
     max-width: 150px; /* Set a maximum width for the image if needed */
     max-height: 150px; /* Set a maximum height for the image if needed */
-    border-radius: 15%; /* Make the image round for avatars */
+    border-radius: 50%; /* Make the image round for avatars */
 }
 
 
