@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo&display=swap');
+
+$primary-font: 'Bebas Neue', sans-serif;
+$secondary-font: 'Heebo', sans-serif;
+$primary-color: black;
+$background-color: #ffffff;
+$link-color: maroon;
+$nav-link-bg: #f0f0f0;
+$nav-link-hover-bg: #333;
+$nav-link-hover-color: white;
+$footer-bg: #333;
+$footer-color: white;
+$border-radius: 15px;
+$photo-card-border: #ddd;
+$photo-card-shadow: rgba(0, 0, 0, 0.1);
+$card-bg: rgba(255, 255, 255, 0.2);
+$card-border: 1px solid rgba(78, 13, 255, 0.3);
+$shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+$text-color: #4D4D4D;
+$text-title-font-size: 2rem;
+$text-font-style: "Roboto", sans-serif;
+$glass-effect: blur(2px);
+
+// for background image in the body tag
+// you can change these three
+$c: gainsboro; // grid lines
+$d: 1em; // grid cell size
+$l: 1px; // line thickness
+
+// computed value, don't change
+$o: .5*$l;
+
+
+body {
+    font-family: $primary-font;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background: 
+		/* horizontal and vertical lines */
+		conic-gradient(from 90deg at $l $l, 
+				#0000 25%, $c 0%) 
+			#{-1*$o -1*$o}/ #{$d $d}, 
+		/* main diagonal */
+		linear-gradient(45deg, 
+				#0000 calc(50% + -1*#{$o}), 
+				$c 0 calc(50% + #{$o}), #0000 0) 0 0/ #{2*$d 2*$d}, 
+		/* secondary diagonal */
+		linear-gradient(-45deg, 
+				#0000 calc(50% + -1*#{$o}), 
+				$c 0 calc(50% + #{$o}), #0000 0) 0 0/ #{2*$d 2*$d}
+}
+
+.container {
+    flex: 1;
+    margin-top: 5rem;
+
+    .avatar-flex-container {
+        text-align: center;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 50%;
+        }
+        .name {
+            margin-top: 2rem;
+            font-size: 30px;
+        }
+    }
+
+    .link-container {
+        .container {
+            position: relative;
+    
+            h2 {
+                display: inline-block;
+                position: relative;
+                font-family: $secondary-font;
+                width: 100%;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                font-weight: bold;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    width: 100px;
+                    height: 4px;
+                    background-color: #000000;
+                    transform: translateX(-50%);
+                    border-radius: 2px;
+                }
+            }
+    
+            .cards {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem; // Correct spacing between cards
+    
+                .card-container-1 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: stretch; // Ensures all cards have equal height
+                    justify-content: center;
+                    width: 100%;
+                    max-width: 100%;
+                    min-width: 50%;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background: $card-bg;
+                    border-radius: 15px;
+                    box-shadow: $shadow;
+                    backdrop-filter: $glass-effect;
+                    -webkit-backdrop-filter: blur(10px);
+                    gap: 20px;
+                    min-height: 300px; // Prevents shrinking
+                    
+                    @media (max-width: 768px) {
+                        flex-direction: column; // Stack content in smaller screens
+                        min-height: auto; // Allow the height to adjust dynamically
+                    }
+    
+                    .card-image {
+                      width: 100%;
+                      height: auto;
+                      min-width: 20rem;
+                      align-items: center;
+                      border-radius: $border-radius;
+                      object-fit: cover;
+                      flex: 1;
+                      transition: all 0.3s ease-in-out;
+    
+                        @media (max-width: 768px) {
+                            height: 150px; // Adjust height for smaller screens
+                        }
+                    }
+    
+                    .card-content {
+                        flex: 1;
+                        
+                        min-height: 100%; // Ensures content doesn’t stretch unevenly
+                        justify-content: space-between;
+                        word-wrap: break-word; // Ensures text wraps inside the container
+    
+                        .card-title {
+                            font-size: $text-title-font-size;
+                            font-weight: bold;
+                            color: $text-color;
+                            white-space: nowrap; // Prevents text from wrapping
+                            overflow: hidden;
+                            text-overflow: ellipsis; // Adds '...' if text is too long
+                        }
+    
+                        .card-features {
+                            display: flex;
+                            max-width: 30rem;
+                            flex-wrap: wrap;
+                            font-size: 0.7rem;
+                            gap: 10px;
+                            letter-spacing: 0.3rem;
+    
+                            span {
+                                background: $card-bg;
+                                padding: 5px 15px;
+                                border-radius: 50px;
+                                border: 1px solid $primary-color;
+                                font-weight: bold;
+                                backdrop-filter: blur(5px);
+                                color: $primary-color;
+                            }
+                        }
+    
+                        .card-description {
+                          margin-top: 2rem;
+                          margin-bottom: 2rem;
+                            font-size: 16px;
+                            color: $text-color;
+                            opacity: 0.8;
+                            flex-grow: 1; // Prevents stretching
+                            line-height: 1.5; // Ensures proper spacing
+                            overflow: hidden; // Ensures text doesn't overflow
+                            text-overflow: ellipsis; // Adds "..." when text is too long
+                            max-height: 4.5rem; // Limits description height to 3 lines
+    
+                            @media (max-width: 768px) {
+                                max-height: none; // Allows full text to be shown on smaller screens
+                            }
+                        }
+
+                        .button {
+                            height: 5rem;
+                            display: flex; // Ensures children (like .bn5) are aligned
+                            justify-content: center; // Centers the button horizontally
+                            align-items: center; // Centers the button vertically
+                            width: fit-content; // Ensures it wraps around the button
+
+
+                            .bn5 {
+                                padding: 0.6em 2em;
+                                border: none;
+                                outline: none;
+                                color: rgb(255, 255, 255);
+                                background: #111;
+                                cursor: pointer;
+                                position: relative;
+                                z-index: 0;
+                                border-radius: $border-radius;
+                                &:before {
+                                    content: "";
+                                    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                                    position: absolute;
+                                    top: -2px;
+                                    left: -2px;
+                                    background-size: 400%;
+                                    z-index: -1;
+                                    filter: blur(5px);
+                                    width: calc(100% + 4px);
+                                    height: calc(100% + 4px);
+                                    animation: glowingbn5 20s linear infinite;
+                                    opacity: 0;
+                                    transition: opacity 0.1s ease-in-out;
+                                    border-radius: px;
+                                }
+                                &:hover:before {
+                                    opacity: 1;
+                                }
+                                &:after {
+                                    z-index: -1;
+                                    content: "";
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: #191919;
+                                    left: 0;
+                                    top: 0;
+                                    border-radius: 10px;
+                                }
+                                &:active {
+                                    color: #000;
+                                    &:after {
+                                        background: transparent;
+                                    }
+                                }
+                            }
+                            
+                            @keyframes glowingbn5 {
+                                0% { background-position: 0 0; }
+                                50% { background-position: 400% 0; }
+                                100% { background-position: 0 0; }
+                            }
+
+                        }
+
+                        
+                        
+
+
+
+
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    color: $primary-color;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    ul {
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+        padding-top: 1cm;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    li {
+        flex: 1;
+        padding: 10px;
+        margin: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: #333;
+        background-color: $nav-link-bg;
+        padding: 10px 15px;
+        border-radius: $border-radius;
+        &:hover {
+            background-color: $nav-link-hover-bg;
+            color: $nav-link-hover-color;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    nav {
+        ul {
+            align-items: center;
+            flex-direction: column;
+        }
+        li {
+            flex: none;
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+
+a {
+    color: $link-color;
+}
+
+.description-container p {
+    font-family: $primary-font, $secondary-font;
+    padding: 20px;
+    text-align: justify;
+}
+
+.container-box {
+    padding: 10px;
+    text-align: center;
+}
+
+.photo-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.photo-card {
+    background-color: #fff;
+    border: 1px solid $photo-card-border;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 4px $photo-card-shadow;
+    max-width: 300px;
+    text-align: center;
+    flex: 1;
+}
+
+
+
+.photo-info {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#photo-card {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+}
+
+footer {
+    background-color: $footer-bg;
+    color: $footer-color;
+    text-align: center;
+    padding: 10px 0;
+    p {
+        margin: 0;
+    }
+}
+
