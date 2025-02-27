@@ -83,7 +83,7 @@ body {
   }
 }
 .container .link-container .container .cards .card-container-1 .card-image {
-  width: 100%;
+  width: 0.5rem;
   height: auto;
   min-width: 20rem;
   align-items: center;
@@ -103,10 +103,10 @@ body {
   justify-content: space-between;
   word-wrap: break-word;
 }
-.container .link-container .container .cards .card-container-1 .card-content .card-title {
+.container .link-container .container .cards .card-container-1 .card-content .card-title-spotify {
   font-size: 2rem;
   font-weight: bold;
-  color: #4D4D4D;
+  color: #1ED760;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -18,6 +18,7 @@ $card-bg: rgba(255, 255, 255, 0.2);
 $card-border: 1px solid rgba(78, 13, 255, 0.3);
 $shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 $text-color: #4D4D4D;
+$text-color-spotify: #1ED760;
 $text-title-font-size: 2rem;
 $text-font-style: "Roboto", sans-serif;
 $glass-effect: blur(2px);
@@ -131,7 +132,7 @@ body {
                     }
     
                     .card-image {
-                      width: 100%;
+                      width: 0.5rem;
                       height: auto;
                       min-width: 20rem;
                       align-items: center;
@@ -152,10 +153,10 @@ body {
                         justify-content: space-between;
                         word-wrap: break-word; // Ensures text wraps inside the container
     
-                        .card-title {
+                        .card-title-spotify {
                             font-size: $text-title-font-size;
                             font-weight: bold;
-                            color: $text-color;
+                            color: $text-color-spotify;
                             white-space: nowrap; // Prevents text from wrapping
                             overflow: hidden;
                             text-overflow: ellipsis; // Adds '...' if text is too long
