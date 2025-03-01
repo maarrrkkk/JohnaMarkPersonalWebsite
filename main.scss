@@ -132,7 +132,7 @@ body {
                     }
     
                     .card-image {
-                      width: 0.5rem;
+                      width: 100%;
                       height: auto;
                       min-width: 20rem;
                       align-items: center;
@@ -183,7 +183,7 @@ body {
     
                         .card-description {
                           margin-top: 2rem;
-                          margin-bottom: 2rem;
+                          
                             font-size: 16px;
                             color: $text-color;
                             opacity: 0.8;
