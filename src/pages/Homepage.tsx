@@ -15,7 +15,7 @@ function Homepage() {
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="h-screen bg-[url('/assets/images/background-img.jpeg')] bg-fixed bg-cover bg-center text-white px-6 flex items-center justify-center relative"
+        className="h-screen bg-[url('../../public/assets/images/background-img.jpeg')] bg-fixed bg-cover bg-center text-white px-6 flex items-center justify-center relative"
       >
           <div className="max-w-3xl text-center p-6 rounded-lg relative z-10">
             <motion.h1
@@ -93,7 +93,7 @@ function Homepage() {
           </div>
           <div className="w-full flex justify-center md:justify-end">
             <img
-              src="/assets/images/JOHN MARK_20230820_131206_0000.jpg"
+              src="../../public/assets/images/JOHN MARK_20230820_131206_0000.jpg"
               alt="John Mark Aguilar"
               className="w-48 h-48 md:w-full md:h-full object-cover rounded-2xl shadow-lg"
             />
@@ -105,7 +105,7 @@ function Homepage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="relative overflow-hidden rounded-lg shadow group">
             <img
-              src="/assets/images/thesis.jpeg"
+              src="../../public/assets/images/thesis.jpeg"
               alt="Thesis Visual"
               className="w-full h-80 object-cover md:h-full transition-transform duration-300 group-hover:scale-150"
             />
@@ -160,7 +160,7 @@ function Homepage() {
                 transition={{ duration: 2 }}
               >
                 <img
-                  src="/assets/images/photo1.jpg"
+                  src="../../public/assets/images/photo1.jpg"
                   alt="John Mark Working"
                   className="rounded-lg shadow-lg object-cover w-full h-80 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
                 />
@@ -176,7 +176,7 @@ function Homepage() {
                 <img
                   alt="Creative Work"
                   className="rounded-lg shadow-lg object-cover w-full h-64 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
-                  src="/assets/images/photo2.jpeg"
+                  src="../../public/assets/images/photo2.jpeg"
                 />
                 </motion.div>
                 <motion.div
@@ -188,7 +188,7 @@ function Homepage() {
                 <img
                   alt="Project Presentation"
                   className="rounded-lg shadow-lg object-cover w-full h-64 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
-                  src="/assets/images/photo3.jpg"
+                  src="../../public/assets/images/photo3.jpg"
                 />
                 </motion.div>
               </div>
