@@ -1,0 +1,34 @@
+
+/* Theme media
+@media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+
+    .nav-container {
+        background-color: #ffffff !important;
+        color: #ffffff !important;
+    }
+  } */
+
+/* Breakpoints */
+
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 992px) {
+    
+}
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 568px) {
+    
+}
