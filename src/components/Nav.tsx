@@ -49,9 +49,9 @@ export default function NavigationBar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-6 text-sm md:text-base">
-            <Link to="/" className="hover:text-blue-600 transition duration-300">Home</Link>
-            <Link to="/projects" className="hover:text-blue-600 transition duration-300">Projects</Link>
-            <Link to="/contact" className="hover:text-blue-600 transition duration-300">Contact</Link>
+            <Link to="/" className="hover:text-sky-300 transition duration-300">Home</Link>
+            <Link to="/projects" className="hover:text-sky-300 transition duration-300">Projects</Link>
+            <Link to="/contact" className="hover:text-sky-300 transition duration-300">Contact</Link>
           </nav>
         </div>
 

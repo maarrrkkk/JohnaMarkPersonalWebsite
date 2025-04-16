@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Particles from "../components/Particles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,8 +6,7 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom';
 
 function Homepage() {
-  const aboutRef = useRef(null);
-  const isInView = useInView(aboutRef, { once: true });
+
 
   return (
     <div className="Home-page">
@@ -72,6 +70,7 @@ function Homepage() {
           </div>
         </div>
       </div>
+      <div className="w-full self-end h-0.5 bg-gray-500" />
 
       <div className="mx-auto text-center bg-slate-800 py-12 px-4 md:px-6">
         <div className=" container mx-auto flex flex-col gap-10 md:flex-row items-start md:space-y-0  justify-center">
@@ -186,52 +185,26 @@ function Homepage() {
           <div className="md:w-1/2 flex flex-col md:flex-col text-center gap-4">
           <div className=" flex flex-col md:flex-row gap-4 items-center">
             <div className="w-full md:w-1/2">
-              <motion.div
-                ref={aboutRef}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 5 }}
-              >
                 <img
                   src="/JohnaMarkPersonalWebsite/assets/images/photo1.jpg"
                   alt="John Mark Working"
                   className="rounded-lg shadow-lg object-cover w-full h-80 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
                 />
-                </motion.div>
               </div>
               <div className="w-full md:w-1/2 flex flex-col gap-4">
-                <motion.div
-                  ref={aboutRef}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 3 }}
-                >
                 <img
                   alt="Creative Work"
                   className="rounded-lg shadow-lg object-cover w-full h-64 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
                   src="/JohnaMarkPersonalWebsite/assets/images/photo2.jpeg"
                 />
-                </motion.div>
-                <motion.div
-                  ref={aboutRef}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 8 }}
-                >
                 <img
                   alt="Project Presentation"
                   className="rounded-lg shadow-lg object-cover w-full h-64 transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
                   src="/JohnaMarkPersonalWebsite/assets/images/photo3.jpg"
                 />
-                </motion.div>
               </div>
             </div>
-            <motion.div
-                  ref={aboutRef}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 4 }}
-                >
+            
             <div className="flex flex-row justify-center gap-4">
               <p className="content-center text-gray-200">Check me out on</p>
             <a
@@ -251,7 +224,6 @@ function Homepage() {
               <FontAwesomeIcon icon={faFacebook} />
             </a> 
             </div>       
-            </motion.div>
           </div>
         </div>
       </div>
