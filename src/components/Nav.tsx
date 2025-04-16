@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function NavigationBar() {
       <div className="shadow-md bg-black/50 backdrop-blur text-white z-50 relative">
         <div className="container mx-auto px-6 py-4 flex justify-center items-center">
           
-          {/* Hamburger Button (still aligned right) */}
+          {/* Hamburger Button */}
           <button
             className="md:hidden text-white focus:outline-none transition-transform duration-200 absolute right-6"
             onClick={() => setOpen(!open)}
@@ -46,11 +47,11 @@ export default function NavigationBar() {
             </motion.div>
           </button>
 
-          {/* Desktop Nav - Centered */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-6 text-sm md:text-base">
-            <a href="#about" className="hover:text-blue-600 transition duration-300">About</a>
-            <a href="#projects" className="hover:text-blue-600 transition duration-300">Projects</a>
-            <a href="#contact" className="hover:text-blue-600 transition duration-300">Contact</a>
+            <Link to="/" className="hover:text-blue-600 transition duration-300">Home</Link>
+            <Link to="/projects" className="hover:text-blue-600 transition duration-300">Projects</Link>
+            <Link to="/contact" className="hover:text-blue-600 transition duration-300">Contact</Link>
           </nav>
         </div>
 
@@ -64,21 +65,29 @@ export default function NavigationBar() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {['about', 'projects', 'contact'].map((link, i) => (
-                <motion.a
-                  key={link}
-                  href={`#${link}`}
-                  className="py-2 text-white hover:text-blue-600"
+              {[
+                { label: 'Home', path: '/' },
+                { label: 'About', path: '/aboutme' },
+                { label: 'Projects', path: '/projects' },
+                { label: 'Contact', path: '/contact' }
+              ].map((item, i) => (
+                <motion.div
+                  key={item.path}
                   variants={linkVariants}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
                   custom={i}
                   transition={{ duration: 0.3 }}
-                  onClick={() => setOpen(false)} // Auto-close on link click
                 >
-                  {link.charAt(0).toUpperCase() + link.slice(1)}
-                </motion.a>
+                  <Link
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className="py-2 text-white hover:text-blue-600 block"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
             </motion.nav>
           )}

@@ -29,7 +29,7 @@ function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h3 className="font-medium mb-2">Follow Me</h3>
+                    <h3 className="font-medium mb-2">Contact me</h3>
                     <div className="flex space-x-4 mt-2 text-xl">
                         <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
                         <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-telegram"></i></a>
