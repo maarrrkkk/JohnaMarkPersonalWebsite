@@ -84,6 +84,7 @@ function Aboutme() {
                   <h1 className="text-2xl font-bold">Skills</h1>
                   {[
                     { label: "React & TypeScript", width: "60%" },
+                    { label: "Laravel & PHP", width: "55%" },
                     { label: "UI/UX Design", width: "95%" },
                     { label: "Graphic Design", width: "75%" },
                     { label: "Mobile Photography", width: "80%" },

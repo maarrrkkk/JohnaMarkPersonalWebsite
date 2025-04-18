@@ -33,6 +33,18 @@ body {
   
 }
 
+.nwssu-content {
+  transition: all 0.3s ease;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 
 @keyframes fade-in {
   0% {

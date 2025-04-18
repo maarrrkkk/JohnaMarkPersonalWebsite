@@ -227,6 +227,32 @@ function Homepage() {
           </div>
         </div>
       </div>
+      
+
+      <div className="relative min-h-screen bg-[url('/JohnaMarkPersonalWebsite/assets/images/nwssu-bg.jpg')] bg-fixed bg-cover bg-center flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        {/* Semi-transparent black overlay */}
+        <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-transparent to-[#020617] opacity-80 z-1"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-green-500 font-bold mb-5 drop-shadow-[0_0_10px_#22c55e]">
+            Northwest Samar State University
+          </h1>
+          <p className="text-gray-200 text-sm sm:text-base mb-2 sm:mb-3">
+            The Northwest Samar State University is a public university in the Philippines. It is one of the state universities and colleges in the Philippines.
+          </p>
+          <p className="text-gray-200 text-sm mb-5 sm:text-base">
+            I am currently undergoing my internship as part of my Bachelor of Science in Information Technology program.
+          </p>
+          <button className="border border-green-500 text-white px-6 py-2 rounded-md shadow hover:bg-green-500 px-8 transition duration-200">
+          Full Story 
+        </button>
+        </div>
+      </div>
+
+
+
 
       <div className="py-16 bg-slate-950 px-4 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
