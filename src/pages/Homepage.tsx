@@ -280,67 +280,7 @@ function Homepage() {
 
 
       <div className="py-16 bg-slate-950 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl text-sky-300 font-bold mb-4">Testimonials</h2>
-          <p className="text-gray-200 mb-12 max-w-2xl mx-auto">
-            Hear from some of my satisfied clients who’ve experienced the quality of my work firsthand.
-          </p>
-
-          <div className="grid gap-10 md:grid-cols-3">    
-
-          <div className="text-white bg-sky-500 p-8 flex flex-col items-left rounded-lg shadow-lg h-full gap-6">
-            <div className="flex flex-row items-left text-left gap-4">
-              <img
-                src="https://scontent.fceb1-4.fna.fbcdn.net/v/t39.30808-6/475213688_1930819384108465_7480961542835826490_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEhAst27EuM8KIFBlDUlZ9nWMyjd8WxTBJYzKN3xbFMEght_1FedPPCOdsgH3hu2SsVdBsM2OwJMAIPOqTKMudW&_nc_ohc=BqWeDXUF0M4Q7kNvwHBDcYr&_nc_oc=Admb0TU-LuJMYoDktn6ZqOBqjHJZEkQ391al1FLSnHLcdVTMcRrxw7lgiqwthka-4RwXQlnMqtFPC4dScID77-_I&_nc_zt=23&_nc_ht=scontent.fceb1-4.fna&_nc_gid=DrIqwGvyfpFPvZgjCdmQ6g&oh=00_AfGN4Ko6oECnZjtu9ZeLp27dlKL5d5SHatJD83i5C88mvA&oe=6802B111"
-                alt="Client 1"
-                className="w-12 h-12 rounded-full"
-              />
-              <div>
-                <p className="font-semibold">Vherner Genoguin</p>
-                <p className="text-sm text-slate-950">Web Developer</p>
-              </div>
-            </div>
-            <p className="text-left max-w-md">
-              “Goods!”
-            </p>
-          </div>
-
-          <div className="text-white bg-sky-500 p-8 flex flex-col items-left rounded-lg shadow-lg h-full gap-6">
-            <div className="flex flex-row items-left text-left gap-4">
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Client 2"
-                className="w-12 h-12 rounded-full"
-              />
-              <div>
-                <p className="font-semibold">Carlos Santiago</p>
-                <p className="text-sm text-slate-950">Product Manager, DevPro</p>
-              </div>
-            </div>
-            <p className="text-left max-w-md">
-              “Their UI/UX design transformed our app into something truly user-friendly and beautiful. Amazing work!”
-            </p>
-          </div>
-
-          <div className="text-white bg-sky-500 p-8 flex flex-col items-left rounded-lg shadow-lg h-full gap-6">
-            <div className="flex flex-row items-left text-left gap-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Client 3"
-                className="w-12 h-12 rounded-full"
-              />
-              <div>
-                <p className="font-semibold">Alyssa Tan</p>
-                <p className="text-sm text-slate-950">Marketing Head, WebWave</p>
-              </div>
-            </div>
-            <p className="text-left max-w-md">
-              “Our new website loads fast, looks great, and has helped increase our online visibility by 200%!”
-            </p>
-          </div>
-
-          </div>
-        </div>
+          <p className="text-red-600 text-center  font-bold leading-snug">Testimonail and Feedback form Soon available!</p>
       </div>
 
     </div>
