@@ -67,7 +67,6 @@ export default function NavigationBar() {
             >
               {[
                 { label: 'Home', path: '/' },
-                { label: 'About', path: '/aboutme' },
                 { label: 'Projects', path: '/projects' },
                 { label: 'Contact', path: '/contact' }
               ].map((item, i) => (

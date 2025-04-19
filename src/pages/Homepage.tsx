@@ -103,7 +103,7 @@ function Homepage() {
 
 
       <div className="bg-slate-950 mx-auto text-center py-12 px-4 md:px-6">
-        <div className="container mx-auto flex flex-col-reverse gap-10 md:flex-row items-center md:space-y-0">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-8 items-center">
           <div className="text-center md:text-start max-w-xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-2 text-sky-300">
               John Mark Aguilar
@@ -115,14 +115,38 @@ function Homepage() {
               Passionate about creating user-centric digital experiences with clean and intuitive interfaces. I specialize in wireframes, prototyping, and responsive design for mobile and web platforms.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <button className="bg-sky-950 text-white px-6 py-2 rounded-md shadow hover:bg-blue-700 transition duration-200">
-                View Portfolio
+              {/* Button to download the portfolio */}
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/JohnaMarkPersonalWebsite/portfolio.pdf";
+                  link.setAttribute("download", "portfolio.pdf");
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-sky-950 text-white px-6 py-2 rounded-md shadow hover:bg-blue-700 transition duration-200"
+              >
+                View Resume
               </button>
-              <button className="border border-sky-450 text-sky-400 px-6 py-2 rounded-md hover:bg-blue-100 transition duration-200">
+
+              {/* Button to contact me */}
+              <button
+                onClick={() => {
+                  const footer = document.getElementById("footer-contact");
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="border border-sky-450 text-sky-400 px-6 py-2 rounded-md hover:bg-blue-100 transition duration-200"
+              >
                 Contact Me
               </button>
+
+
             </div>
           </div>
+          
           <div className="w-full flex justify-center md:justify-end">
             <img
               src="/JohnaMarkPersonalWebsite/assets/images/JOHN MARK_20230820_131206_0000.jpg"
@@ -163,12 +187,13 @@ function Homepage() {
               Built using modern technologies like PyQt5 and serial communication, this system is focused on practical implementation and real-world application in school libraries.
             </p>
             <div className="mt-6 justify-items-center">
-              <a
-                href="#"
+            <Link to="/thesis">
+              <button
                 className="border border-sky-450 text-sky-400 px-6 py-2 rounded-md hover:bg-blue-100 transition duration-200"
               >
                 View Full Thesis
-              </a>
+              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -246,7 +271,7 @@ function Homepage() {
             I am currently undergoing my internship as part of my Bachelor of Science in Information Technology program.
           </p>
           <button className="border border-green-500 text-white px-6 py-2 rounded-md shadow hover:bg-green-500 px-8 transition duration-200">
-          Full Story 
+          Full Story Comming Soon! 
         </button>
         </div>
       </div>

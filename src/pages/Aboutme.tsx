@@ -1,20 +1,20 @@
-import Aurora from '../components/Aurora';
+// import Aurora from '../components/Aurora';
 
 function Aboutme() {
   return (
     <div className="relative bg-slate-950 About-me overflow-hidden">
       {/* Aurora background */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Aurora
           colorStops={["#046E5B", "#66A8FF", "#00457A"]}
           blend={0.5}
           amplitude={1}
           speed={1}
         />
-      </div>
+      </div> */}
 
       {/* Main content above */}
-      <div className="relative z-10 px-4 sm:px-6 pb-5 pt-24">
+      <div className="relative z-10 px-4 sm:px-6 pb-5 pt-20">
         <div className="min-h-screen flex flex-col lg:flex-row w-full gap-8 items-start">
 
           {/* Image */}

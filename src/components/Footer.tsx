@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 function Footer() {
     return (
-        <div className="Footer bg-gray-900 text-white">
+        <div id="footer-contact" className="Footer bg-gray-900 text-white">
             <div className="bg-gray-900">
                 <div className="p-10 flex flex-col items-center justify-center">
                 <h1 className="text-4xl text-white font-bold mb-4">Do you have Project Idea?</h1>
@@ -23,7 +23,6 @@ function Footer() {
                     <h3 className="font-medium mb-2">Quick Links</h3>
                     <ul className="space-y-1 text-gray-400">
                         <li><a href="#" className="hover:text-white">Home</a></li>
-                        <li><a href="#" className="hover:text-white">About</a></li>
                         <li><a href="#" className="hover:text-white">Projects</a></li>
                         <li><a href="#" className="hover:text-white">Contact</a></li>
                     </ul>
@@ -31,10 +30,10 @@ function Footer() {
                 <div>
                     <h3 className="font-medium mb-2">Contact me</h3>
                     <div className="flex space-x-4 mt-2 text-xl">
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-telegram"></i></a>
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/johnmark.aguilar.940" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
+                        <a href="https://www.t.me/mmaarrrk" className="text-gray-400 hover:text-white"><i className="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/maarrk_06/" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/9928239215" className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </footer>
