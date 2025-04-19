@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  
 
   const linkVariants = {
     hidden: { opacity: 0, x: -10 },
@@ -15,14 +18,56 @@ export default function NavigationBar() {
     exit: { opacity: 0, x: -10 },
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: 'easeOut' },
+    },
+  };
+
   return (
     <div className="absolute top-0 left-0 w-full navigation-bar">
       <div className="shadow-md bg-black/50 backdrop-blur text-white z-50 relative">
-        <div className="container mx-auto px-6 py-4 flex justify-center items-center">
+        <div className="container mx-auto px-6 py-2 relative flex items-center justify-between">
           
-          {/* Hamburger Button */}
+          {/* Logo - Aligned Left */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2 relative overflow-hidden group"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <motion.img
+              src="/JohnaMarkPersonalWebsite/assets/images/logo.png"
+              alt="Logo"
+              className="h-8 w-auto transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+            />
+            <motion.div
+              className="flex items-center space-x-2"
+              variants={containerVariants}
+              initial="hidden"
+              animate={isHovered ? 'visible' : 'hidden'}
+            >
+              <div className="h-6 w-px bg-white opacity-50" />
+              <img
+                src="/JohnaMarkPersonalWebsite/assets/images/bubu.png"
+                alt="Divider Logo"
+                className="h-8 w-auto transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+              />
+            </motion.div>
+          </Link>
+
+          {/* Centered Nav (Desktop only) */}
+          <nav className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex space-x-6 text-sm md:text-base">
+            <Link to="/projects" className="hover:text-sky-300 transition duration-300">Projects</Link>
+            <Link to="/contact" className="hover:text-sky-300 transition duration-300">Contact</Link>
+          </nav>
+
+          {/* Hamburger Menu (Right) */}
           <button
-            className="md:hidden text-white focus:outline-none transition-transform duration-200 absolute right-6"
+            className="md:hidden text-white focus:outline-none transition-transform duration-200"
             onClick={() => setOpen(!open)}
             aria-label="Toggle Menu"
           >
@@ -46,16 +91,9 @@ export default function NavigationBar() {
               )}
             </motion.div>
           </button>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6 text-sm md:text-base">
-            <Link to="/" className="hover:text-sky-300 transition duration-300">Home</Link>
-            <Link to="/projects" className="hover:text-sky-300 transition duration-300">Projects</Link>
-            <Link to="/contact" className="hover:text-sky-300 transition duration-300">Contact</Link>
-          </nav>
         </div>
 
-        {/* Mobile Nav with Animation */}
+        {/* Mobile Navigation */}
         <AnimatePresence>
           {open && (
             <motion.nav
@@ -66,7 +104,6 @@ export default function NavigationBar() {
               transition={{ duration: 0.3 }}
             >
               {[
-                { label: 'Home', path: '/' },
                 { label: 'Projects', path: '/projects' },
                 { label: 'Contact', path: '/contact' }
               ].map((item, i) => (
