@@ -42,7 +42,7 @@ export default function NavigationBar() {
             <motion.img
               src="/JohnaMarkPersonalWebsite/assets/images/logo.png"
               alt="Logo"
-              className="h-8 w-auto transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+              className="h-8 w-auto" // Removed transition and transform classes
             />
             <motion.div
               className="flex items-center space-x-2"
@@ -54,10 +54,11 @@ export default function NavigationBar() {
               <img
                 src="/JohnaMarkPersonalWebsite/assets/images/bubu.png"
                 alt="Divider Logo"
-                className="h-8 w-auto transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+                className="h-8 w-auto" // Removed transition and transform classes
               />
             </motion.div>
           </Link>
+
 
           {/* Centered Nav (Desktop only) */}
           <nav className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex space-x-6 text-sm md:text-base">

@@ -280,7 +280,7 @@ function Homepage() {
 
 
       <div className="py-16 bg-slate-950 px-4 md:px-8">
-          <p className="text-red-600 text-center  font-bold leading-snug">Testimonail and Feedback form Soon available!</p>
+          <p className="text-red-600 text-center  font-bold leading-snug">Testimonials and Feedback form Soon available!</p>
       </div>
 
     </div>
