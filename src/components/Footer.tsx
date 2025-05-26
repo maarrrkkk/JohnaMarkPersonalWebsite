@@ -30,14 +30,14 @@ function Footer() {
                 <div>
                     <h3 className="font-medium mb-2">Contact me</h3>
                     <div className="flex space-x-4 mt-2 text-xl">
-                        {/* <a href="https://www.facebook.com/johnmark.aguilar.940" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/johnmark.aguilar.940" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
                         <a href="https://www.t.me/mmaarrrk" className="text-gray-400 hover:text-white"><i className="fab fa-telegram"></i></a>
                         <a href="https://www.instagram.com/maarrk_06/" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/9928239215" className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a> */}
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/9928239215" className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a>
+{/*                         <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
                         <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-telegram"></i></a>
                         <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
-                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a>
+                        <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a> */}
 
                     </div>
                 </div>
