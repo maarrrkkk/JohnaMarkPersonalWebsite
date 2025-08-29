@@ -1,105 +1,171 @@
 import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Particles from "../components/Particles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 function Homepage() {
-
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
+    }),
+  };
 
   return (
     <div className="Home-page">
+      {/* HERO */}
       <motion.div
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="h-screen bg-[url('/JohnaMarkPersonalWebsite/assets/images/background-img.jpeg')] bg-fixed bg-cover bg-center text-white px-6 flex items-center justify-center relative"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="h-screen bg-[url('/JohnaMarkPersonalWebsite/assets/images/background-img.jpeg')] 
+                   bg-fixed bg-cover bg-center text-white px-6 flex items-center justify-center relative"
       >
-          <div className="max-w-3xl text-center p-6 rounded-lg relative z-10">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-4xl md:text-5xl font-bold mb-4"
-            >
-              Hello I am John Mark Aguilar
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
-              className="text-lg md:text-xl mb-8"
-            >
-              I am a Website developer, graphic designer.
-            </motion.p>
+        <div className="max-w-3xl text-center p-6 rounded-lg relative z-10">
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Hello I am John Mark Aguilar
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            className="text-lg md:text-xl mb-8"
+          >
+            I am a Website developer, graphic designer.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+          >
             <Link to="/aboutme">
               <Button>Learn More</Button>
             </Link>
-          </div>
+          </motion.div>
+        </div>
 
+        {/* Floating Particles */}
         <div className="absolute top-0 left-0 w-full h-full z-0">
           <Particles />
         </div>
       </motion.div>
 
       <div className="w-full px-6 py-8 bg-slate-800">
-        <div className="flex flex-wrap justify-center items-center gap-6 py-4">
-          {[
-            { icon: "html5", color: "orange-600", name: "HTML" },
-            { icon: "css3-alt", color: "blue-600", name: "CSS" },
-            { icon: "php", color: "indigo-700", name: "PHP" },
-            { icon: "sass", color: "pink-500", name: "SCSS" },
-            { icon: "laravel", color: "red-600", name: "Laravel" },
-            { icon: "figma", color: "purple-500", name: "Figma" },
-            { icon: "react", color: "sky-500", name: "React" },
-            { icon: "python", color: "yellow-500", name: "Python" },
-          ].map((skill, index) => (
-            <div className="flex flex-col items-center min-w-[80px]" key={index}>
-              <i className={`fab fa-${skill.icon} text-5xl text-${skill.color}`}></i>
-              <p className="mt-2 text-white font-medium">{skill.name}</p>
-            </div>
-          ))}
-          <div className="flex flex-col items-center min-w-[80px]">
-            <img
-              src="https://logospng.org/download/tailwind-css/tailwind-css-4096.png"
-              alt="Tailwind CSS"
-              className="w-13 p-2 h-12"
-            />
-            <p className="mt-2 text-white font-medium">Tailwind</p>
-          </div>
+        {/* SKILLS WITH HOVER ANIMATION */}
+        <div className="w-full px-6 py-8 bg-slate-800">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.15 }}
+            className="flex flex-wrap justify-center items-center gap-6 py-4"
+          >
+            {[
+              { icon: "html5", color: "orange-600", name: "HTML" },
+              { icon: "css3-alt", color: "blue-600", name: "CSS" },
+              { icon: "php", color: "indigo-700", name: "PHP" },
+              { icon: "sass", color: "pink-500", name: "SCSS" },
+              { icon: "laravel", color: "red-600", name: "Laravel" },
+              { icon: "figma", color: "purple-500", name: "Figma" },
+              { icon: "react", color: "sky-500", name: "React" },
+              { icon: "python", color: "yellow-500", name: "Python" },
+            ].map((skill, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                className="flex flex-col items-center min-w-[80px] cursor-pointer"
+              >
+                <i
+                  className={`fab fa-${skill.icon} text-5xl text-${skill.color}`}
+                ></i>
+                <p className="mt-2 text-white font-medium">{skill.name}</p>
+              </motion.div>
+            ))}
+
+            {/* Tailwind block added here */}
+            <motion.div
+              variants={fadeUp}
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              className="flex flex-col items-center min-w-[80px] cursor-pointer"
+            >
+              <img
+                src="/JohnaMarkPersonalWebsite/assets/images/Tailwind_CSS_Logo.png"
+                alt="Tailwind CSS"
+                className="w-13 p-2 h-12"
+              />
+              <p className="mt-2 text-white font-medium">Tailwind</p>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
       <div className="w-full self-end h-0.5 bg-gray-500" />
 
-      <div className="mx-auto text-center bg-slate-800 py-12 px-4 md:px-6">
-        <div className=" container mx-auto flex flex-col gap-10 md:flex-row items-start md:space-y-0  justify-center">
-          {/* UI/UX Design */}
-          <div className="flex flex-col items-center p-8">
-            <i className="fas fa-crown bg-gray-200 rounded-md content-center h-12 w-12 text-purple-600 mb-4"></i>
-            <h3 className="text-xl font-semibold text-white mb-2">UI/UX Design</h3>
-            <p className="text-white">
-              Crafting intuitive and aesthetically pleasing interfaces that enhance user experience through thoughtful design.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center p-8">
-            <i className="fas fa-laptop-code bg-gray-200 rounded-md content-center h-12 w-12 text-blue-600 mb-4"></i>
-            <h3 className="text-xl font-semibold text-white mb-2">Application Development</h3>
-            <p className="text-white">
-              Building robust and scalable applications tailored to solve real-world problems across platforms.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center p-8">
-            <i className="fas fa-globe bg-gray-200 rounded-md content-center h-12 w-12 text-green-600 mb-4"></i>
-            <h3 className="text-xl font-semibold text-white mb-2">Web Development</h3>
-            <p className="text-white">
-              Developing responsive and dynamic websites with modern technologies to ensure seamless online presence.
-            </p>
-          </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.2 }}
+        className="mx-auto text-center bg-slate-800 py-12 px-4 md:px-6"
+      >
+        <div className="container mx-auto flex flex-col gap-10 md:flex-row items-start justify-center">
+          {[
+            {
+              icon: "fas fa-crown",
+              color: "text-purple-600",
+              title: "UI/UX Design",
+              desc: "Crafting intuitive and aesthetically pleasing interfaces that enhance user experience through thoughtful design."
+            },
+            {
+              icon: "fas fa-laptop-code",
+              color: "text-blue-600",
+              title: "Application Development",
+              desc: "Building robust and scalable applications tailored to solve real-world problems across platforms."
+            },
+            {
+              icon: "fas fa-globe",
+              color: "text-green-600",
+              title: "Web Development",
+              desc: "Developing responsive and dynamic websites with modern technologies to ensure seamless online presence."
+            }
+          ].map((service, idx) => (
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotateX: 5,
+                rotateY: -5,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.3)"
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              className="flex flex-col items-center p-8 bg-slate-900 rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300"
+            >
+              <i
+                className={`${service.icon} bg-gray-200 rounded-md content-center h-12 w-12 flex items-center justify-center ${service.color} mb-4 text-2xl`}
+              ></i>
+              <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
+              <p className="text-gray-300">{service.desc}</p>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
 
       <div className="bg-slate-950 mx-auto text-center py-12 px-4 md:px-6">
@@ -112,7 +178,9 @@ function Homepage() {
               UI/UX Designer and Web Developer
             </p>
             <p className="text-md text-gray-200 mb-6">
-              Passionate about creating user-centric digital experiences with clean and intuitive interfaces. I specialize in wireframes, prototyping, and responsive design for mobile and web platforms.
+              Passionate about creating user-centric digital experiences with
+              clean and intuitive interfaces. I specialize in wireframes,
+              prototyping, and responsive design for mobile and web platforms.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
               {/* Button to download the portfolio */}
@@ -142,11 +210,9 @@ function Homepage() {
               >
                 Contact Me
               </button>
-
-
             </div>
           </div>
-          
+
           <div className="w-full flex justify-center md:justify-end">
             <img
               src="/JohnaMarkPersonalWebsite/assets/images/JOHN MARK_20230820_131206_0000.jpg"
@@ -165,14 +231,24 @@ function Homepage() {
               alt="Thesis Visual"
               className="w-full h-80 object-cover md:h-full transition-transform duration-300 group-hover:scale-150"
             />
-            {["Mae Ann Arriega", "John Mark Aguilar", "Jamila Aguilar"].map((name, idx) => (
-              <div
-                key={idx}
-                className={`absolute hidden md:block top-80 ${idx === 0 ? "left-10" : idx === 1 ? "left-1/2 transform -translate-x-1/2" : "right-10"} -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-              >
-                <p className="font-semibold bg-black/60 px-3 py-1 rounded">{name}</p>
-              </div>
-            ))}
+            {["Mae Ann Arriega", "John Mark Aguilar", "Jamila Aguilar"].map(
+              (name, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute hidden md:block top-80 ${
+                    idx === 0
+                      ? "left-10"
+                      : idx === 1
+                      ? "left-1/2 transform -translate-x-1/2"
+                      : "right-10"
+                  } -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                >
+                  <p className="font-semibold bg-black/60 px-3 py-1 rounded">
+                    {name}
+                  </p>
+                </div>
+              )
+            )}
           </div>
 
           <div>
@@ -181,18 +257,23 @@ function Homepage() {
               NwSSU Library Noise Detector
             </h2>
             <p className="text-gray-200 mb-4">
-              The <span className="font-medium">Library Noise Detector System</span> is an Arduino-based solution designed to maintain a quiet and productive study environment. It enables real-time noise monitoring and provides staff controls through a desktop interface.
+              The{" "}
+              <span className="font-medium">Library Noise Detector System</span>{" "}
+              is an Arduino-based solution designed to maintain a quiet and
+              productive study environment. It enables real-time noise
+              monitoring and provides staff controls through a desktop
+              interface.
             </p>
             <p className="text-gray-200">
-              Built using modern technologies like PyQt5 and serial communication, this system is focused on practical implementation and real-world application in school libraries.
+              Built using modern technologies like PyQt5 and serial
+              communication, this system is focused on practical implementation
+              and real-world application in school libraries.
             </p>
             <div className="mt-6 justify-items-center">
-            <Link to="/thesis">
-              <button
-                className="border border-sky-450 text-sky-400 px-6 py-2 rounded-md hover:bg-blue-100 transition duration-200"
-              >
-                View Full Thesis
-              </button>
+              <Link to="/thesis">
+                <button className="border border-sky-450 text-sky-400 px-6 py-2 rounded-md hover:bg-blue-100 transition duration-200">
+                  View Full Thesis
+                </button>
               </Link>
             </div>
           </div>
@@ -202,14 +283,22 @@ function Homepage() {
       <div className="px-6 py-12 bg-slate-950">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
-            <h4 className="text-3xl font-bold text-sky-300 mb-4">A Little Bit About Me</h4>
+            <h4 className="text-3xl font-bold text-sky-300 mb-4">
+              A Little Bit About Me
+            </h4>
             <p className="text-gray-200 leading-relaxed">
-            I'm John Mark Aguilar, a passionate photographer who finds joy in capturing moments that tell a story. Using my Realme 5 Pro smartphone, I bring out the beauty in both landscapes and portraits through a mobile lens. I explore light, emotion, and composition to create visually striking and meaningful imagery. Whether it’s portraits, sweeping landscapes, or candid shots, I aim to preserve the essence of every scene I encounter.
+              I'm John Mark Aguilar, a passionate photographer who finds joy in
+              capturing moments that tell a story. Using my Realme 5 Pro
+              smartphone, I bring out the beauty in both landscapes and
+              portraits through a mobile lens. I explore light, emotion, and
+              composition to create visually striking and meaningful imagery.
+              Whether it’s portraits, sweeping landscapes, or candid shots, I
+              aim to preserve the essence of every scene I encounter.
             </p>
           </div>
           <div className="md:w-1/2 flex flex-col md:flex-col text-center gap-4">
-          <div className=" flex flex-col md:flex-row gap-4 items-center">
-            <div className="w-full md:w-1/2">
+            <div className=" flex flex-col md:flex-row gap-4 items-center">
+              <div className="w-full md:w-1/2">
                 <img
                   src="/JohnaMarkPersonalWebsite/assets/images/photo1.jpg"
                   alt="John Mark Working"
@@ -229,30 +318,29 @@ function Homepage() {
                 />
               </div>
             </div>
-            
+
             <div className="flex flex-row justify-center gap-4">
               <p className="content-center text-gray-200">Check me out on</p>
-            <a
-              href="https://www.instagram.com/johnmark_aguilar/"
-              className="text-3xl text-gray-200 hover:text-blue-700 transition duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-            </a> 
-            <a
-              href="https://www.instagram.com/johnmark_aguilar/"
-              className="text-3xl text-gray-200 hover:text-blue-700 transition duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faFacebook} />
-            </a> 
-            </div>       
+              <a
+                href="https://www.instagram.com/johnmark_aguilar/"
+                className="text-3xl text-gray-200 hover:text-blue-700 transition duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                href="https://www.instagram.com/johnmark_aguilar/"
+                className="text-3xl text-gray-200 hover:text-blue-700 transition duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
 
       <div className="relative min-h-screen bg-[url('/JohnaMarkPersonalWebsite/assets/images/nwssu-bg.jpg')] bg-fixed bg-cover bg-center flex items-center justify-center px-4 sm:px-6 lg:px-8">
         {/* Semi-transparent black overlay */}
@@ -265,24 +353,25 @@ function Homepage() {
             Northwest Samar State University
           </h1>
           <p className="text-gray-200 text-sm sm:text-base mb-2 sm:mb-3">
-            The Northwest Samar State University is a public university in the Philippines. It is one of the state universities and colleges in the Philippines.
+            The Northwest Samar State University is a public university in the
+            Philippines. It is one of the state universities and colleges in the
+            Philippines.
           </p>
           <p className="text-gray-200 text-sm mb-5 sm:text-base">
-            I am currently undergoing my internship as part of my Bachelor of Science in Information Technology program.
+            I am currently undergoing my internship as part of my Bachelor of
+            Science in Information Technology program.
           </p>
           <button className="border border-green-500 text-white px-6 py-2 rounded-md shadow hover:bg-green-500 px-8 transition duration-200">
-          Full Story Comming Soon! 
-        </button>
+            Full Story Comming Soon!
+          </button>
         </div>
       </div>
 
-
-
-
       <div className="py-16 bg-slate-950 px-4 md:px-8">
-          <p className="text-red-600 text-center  font-bold leading-snug">Testimonials and Feedback form Soon available!</p>
+        <p className="text-red-600 text-center  font-bold leading-snug">
+          Testimonials and Feedback form Soon available!
+        </p>
       </div>
-
     </div>
   );
 }
