@@ -35,7 +35,7 @@ function Aboutme() {
                 <div className="text-white w-full flex flex-row justify-between items-center text-sm sm:text-base font-bold">
                   Status:{" "}
                   <span className="text-gray-400 ml-2">
-                    Available for Projects
+                    Single
                   </span>
                 </div>
                 <div className="text-white w-full flex flex-row justify-between items-center text-sm sm:text-base font-bold">
@@ -64,8 +64,7 @@ function Aboutme() {
                 Full-Stack Developer & Virtual Assistant
               </h2>
               <p className="text-right text-gray-300 text-lg">
-                Helping businesses grow through modern web solutions and
-                efficient virtual assistance
+                I'll be your own personal internet slave!
               </p>
             </div>
 
@@ -285,6 +284,7 @@ function Aboutme() {
           </div>
         </div>
       </div>
+      
       {/* Call to Action */}
       <div className="bg-gradient-to-r from-purple-600 to-purple-800 p-6 text-center">
         <h3 className="text-xl font-bold text-white mb-3">
@@ -294,10 +294,16 @@ function Aboutme() {
           Let's discuss how I can help bring your ideas to life or streamline
           your business operations.
         </p>
-        <button className="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+        <a
+          href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgmFqpGwhBQpfkdgjXhHkhJlBXdqNntLVVzcWPnsFBwsjTfdQGNPLqrXnntWcWZqqHTdV"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+        >
           Get In Touch
-        </button>
+        </a>
       </div>
+      
     </div>
   );
 }
