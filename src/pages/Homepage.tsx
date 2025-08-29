@@ -62,7 +62,7 @@ function Homepage() {
           ))}
           <div className="flex flex-col items-center min-w-[80px]">
             <img
-              src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-2048x1229-u8dzt4uh.png"
+              src="https://logospng.org/download/tailwind-css/tailwind-css-4096.png"
               alt="Tailwind CSS"
               className="w-13 p-2 h-12"
             />
