@@ -84,24 +84,28 @@ function Aboutme() {
                     that save you time and drive results.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="bg-slate-800 p-4 rounded-lg border border-purple-500/20">
-                      <h4 className="font-semibold text-purple-300 mb-2">
+
+                    <div className="bg-slate-800 p-6 rounded-2xl border border-purple-500/20 shadow-md 
+                      hover:shadow-purple-500/20 hover:scale-[1.02] transition-all duration-300">
+                      <h4 className="font-semibold text-purple-300 text-lg mb-2">
                         Web Development
                       </h4>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Custom websites and web applications that drive business
                         growth
                       </p>
                     </div>
-                    <div className="bg-slate-800 p-4 rounded-lg border border-purple-500/20">
-                      <h4 className="font-semibold text-purple-300 mb-2">
+
+                    <div className="bg-slate-800 p-6 rounded-2xl border border-purple-500/20 shadow-md 
+                      hover:shadow-purple-500/20 hover:scale-[1.02] transition-all duration-300">
+                      <h4 className="font-semibold text-purple-300 text-lg mb-2">
                         Virtual Assistant
                       </h4>
-                      <p className="text-sm text-gray-400">
-                        Administrative support, social media management, and
-                        business operations
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        Data Entry Associate • Typing Specialist • Email Management
                       </p>
                     </div>
+
                   </div>
                 </div>
 
@@ -153,7 +157,7 @@ function Aboutme() {
                           Digital Marketing Support
                         </h4>
                         <p className="text-sm text-gray-400">
-                          Social media management, content strategy, SEO
+                          Content strategy, SEO
                           optimization
                         </p>
                       </div>
@@ -163,35 +167,36 @@ function Aboutme() {
 
                 <div className="flex flex-col gap-4 mb-8">
                   <h3 className="text-2xl font-bold text-purple-400">
-                    Why Choose Me?
+                    Why Work With Me?
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <span className="text-purple-500 font-bold">✓</span>
                       <span className="text-gray-300">
-                        Fast turnaround times and reliable communication
+                        Always willing to learn and improve my skills
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-purple-500 font-bold">✓</span>
                       <span className="text-gray-300">
-                        Modern, mobile-first development approach
+                        Communicates clearly and responds quickly
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-purple-500 font-bold">✓</span>
                       <span className="text-gray-300">
-                        Comprehensive support from concept to completion
+                        Can help with simple projects and tasks
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-purple-500 font-bold">✓</span>
                       <span className="text-gray-300">
-                        Affordable rates with premium quality results
+                        Offers affordable work with dedication and effort
                       </span>
                     </div>
                   </div>
                 </div>
+
               </div>
 
               {/* Right Column */}
@@ -283,25 +288,6 @@ function Aboutme() {
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-purple-600 to-purple-800 p-6 text-center">
-        <h3 className="text-xl font-bold text-white mb-3">
-          Ready to Start Your Project?
-        </h3>
-        <p className="text-purple-100 mb-4 text-sm">
-          Let's discuss how I can help bring your ideas to life or streamline
-          your business operations.
-        </p>
-        <a
-          href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgmFqpGwhBQpfkdgjXhHkhJlBXdqNntLVVzcWPnsFBwsjTfdQGNPLqrXnntWcWZqqHTdV"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-        >
-          Get In Touch
-        </a>
       </div>
       
     </div>
